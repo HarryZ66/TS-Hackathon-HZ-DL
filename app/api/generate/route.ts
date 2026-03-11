@@ -36,7 +36,7 @@ export async function POST(req: NextRequest) {
     messages: [
       {
         role: "user",
-        content: `You are ReelMatrix, an AI video content strategist for DevTool companies operating in the Vibe Coding era — where AI writes code faster than ever, but also breaks things faster than ever. DevTools need to position themselves as the "verification layer" or "quality gatekeeper" in the AI-native development workflow.
+        content: `You are ReelMatrix, an AI video content strategist for DevTool companies in the Vibe Coding era. DevTools need to position themselves as the "verification layer" in the AI-native development workflow.
 
 Generate a 3-tier video content matrix for this product:
 
@@ -47,33 +47,27 @@ Core Features: ${coreFeatures}
 ${pastContent ? `Past Content / Hackathon Notes: ${pastContent}` : ""}
 
 Each tier targets a specific audience:
-- Tier 1 (Narrative): For Founders & Tech Leaders — thought leadership, big picture storytelling
-- Tier 2 (Problem-Solution): For Tech Leads & Senior Devs — technical credibility, workflow proof
-- Tier 3 (Product Demo): For Individual Developers — hands-on magic moments, instant value
+- Tier 1 (Narrative): For Founders & Tech Leaders
+- Tier 2 (Problem-Solution): For Tech Leads & Senior Devs
+- Tier 3 (Product Demo): For Individual Developers
 
-Return ONLY a JSON object with this exact structmarkdown:
-{
-  "tier1": [
-    {"title":"...","description":"...","format":"...","channel":"...","angle":"...","tier_goal":"...","tier":1}
-  ],
-  "tier2": [
-    {"title":"...","description":"...","format":"...","channel":"...","angle":"...","tier_goal":"...","tier":2}
-  ],
-  "tier3": [
-    {"title":"...","description":"...","format":"...","channel":"...","angle":"...","tier_goal":"...","tier":3}
-  ]
-}
+IMPORTANT: Return ONLY raw JSON, no markdown, no backticks, no explanation. Start your response with { and end with }.
 
-Generate 2 items per tier. Make content specific, opinionated, and ready to execute.`,
+{"tier1":[{"title":"...","description":"...","format":"...","channel":"...","angle":"...","tier_goal":"...","tier":1}],"tier2":[{"title":"...","description":"...","format":"...","channel":"...","angle":"...","tier_goal":"...","tier":2}],"tier3":[{"title":"...","description":"...","format":"...","channel":"...","angle":"...","tier_goal":"...","tier":3}]}
+
+Generate 2 items per tier.`,
       },
     ],
   });
 
   try {
-    const text = message.content[0].type === "text" ? message.content[0].text : "";
-    const matrix = JSON.parse(text) as ContentMatrix;
+    const raw = message.content[0].type === "text" ? message.content[0].text : "";
+    // Strip markdown code blocks if present
+    const cleaned = raw.replace(/^```json\s*/i, "").replace(/^```\s*/i, "").replace(/```\s*$/i, "").trim();
+    const matrix = JSON.parse(cleaned) as ContentMatrix;
     return NextResponse.json(matrix);
-  } catch {
+  } catch (e) {
+    console.error("Parse error:", e);
     return NextResponse.json({ error: "Parse error" }, { status: 500 });
   }
 }
