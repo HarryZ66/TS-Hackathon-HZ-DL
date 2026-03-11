@@ -1,0 +1,433 @@
+[
+  {
+    "id": "TC001",
+    "title": "Generate a content matrix successfully and replace the sample matrix",
+    "description": "Verifies a user can fill all required intake fields, generate a matrix, and see the sample banner disappear after a successful response.",
+    "category": "Generate Content Matrix",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Fill \"Acme Launch Kit\" into the Product Name required input field"
+      },
+      {
+        "type": "action",
+        "description": "Fill \"A toolkit that helps startups plan, produce, and schedule launch content across channels.\" into the Product Description required textarea field"
+      },
+      {
+        "type": "action",
+        "description": "Fill \"Early-stage founders and small marketing teams\" into the Target Users required textarea field"
+      },
+      {
+        "type": "action",
+        "description": "Fill \"Content calendar templates, idea generator, channel guidelines\" into the Core Features required textarea field"
+      },
+      {
+        "type": "action",
+        "description": "Click the Generate Content Matrix button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"3 animated loading skeleton cards\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Generated content matrix\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC002",
+    "title": "Validation: Product Name required shows inline error when missing",
+    "description": "Verifies client-side validation blocks submission and shows an inline error when Product Name is empty.",
+    "category": "Generate Content Matrix",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Fill \"A toolkit that helps startups plan, produce, and schedule launch content across channels.\" into the Product Description required textarea field"
+      },
+      {
+        "type": "action",
+        "description": "Fill \"Early-stage founders and small marketing teams\" into the Target Users required textarea field"
+      },
+      {
+        "type": "action",
+        "description": "Fill \"Content calendar templates, idea generator, channel guidelines\" into the Core Features required textarea field"
+      },
+      {
+        "type": "action",
+        "description": "Click the Generate Content Matrix button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"error-productName\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC003",
+    "title": "Validation: Product Description required shows inline error when missing",
+    "description": "Verifies client-side validation blocks submission and shows an inline error when Product Description is empty.",
+    "category": "Generate Content Matrix",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Fill \"Acme Launch Kit\" into the Product Name required input field"
+      },
+      {
+        "type": "action",
+        "description": "Fill \"Early-stage founders and small marketing teams\" into the Target Users required textarea field"
+      },
+      {
+        "type": "action",
+        "description": "Fill \"Content calendar templates, idea generator, channel guidelines\" into the Core Features required textarea field"
+      },
+      {
+        "type": "action",
+        "description": "Click the Generate Content Matrix button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"error-description\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC004",
+    "title": "Validation: Target Users required shows inline error when missing",
+    "description": "Verifies client-side validation blocks submission and shows an inline error when Target Users is empty.",
+    "category": "Generate Content Matrix",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Fill \"Acme Launch Kit\" into the Product Name required input field"
+      },
+      {
+        "type": "action",
+        "description": "Fill \"A toolkit that helps startups plan, produce, and schedule launch content across channels.\" into the Product Description required textarea field"
+      },
+      {
+        "type": "action",
+        "description": "Fill \"Content calendar templates, idea generator, channel guidelines\" into the Core Features required textarea field"
+      },
+      {
+        "type": "action",
+        "description": "Click the Generate Content Matrix button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"error-targetUsers\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC005",
+    "title": "Validation: Core Features required shows inline error when missing",
+    "description": "Verifies client-side validation blocks submission and shows an inline error when Core Features is empty.",
+    "category": "Generate Content Matrix",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Fill \"Acme Launch Kit\" into the Product Name required input field"
+      },
+      {
+        "type": "action",
+        "description": "Fill \"A toolkit that helps startups plan, produce, and schedule launch content across channels.\" into the Product Description required textarea field"
+      },
+      {
+        "type": "action",
+        "description": "Fill \"Early-stage founders and small marketing teams\" into the Target Users required textarea field"
+      },
+      {
+        "type": "action",
+        "description": "Click the Generate Content Matrix button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"error-coreFeatures\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC006",
+    "title": "Generate matrix and verify it restores on reload without sample banner",
+    "description": "Verifies a successfully generated matrix is persisted and restored on a subsequent page load with no sample banner and expected content visible.",
+    "category": "Persisted Matrix Restore",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Type \"Acme Analytics\" into the Product Name field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"A B2B analytics platform that turns product usage into actionable insights.\" into the Product Description field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"Product managers, growth teams, and data analysts\" into the Target Users field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"Funnels, cohort analysis, dashboards, alerts\" into the Core Features field"
+      },
+      {
+        "type": "action",
+        "description": "Click on the Generate Content Matrix button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Sample\" is not visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Tier 1\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC007",
+    "title": "Restore happens immediately on reload (no loading skeleton shown)",
+    "description": "Verifies that after a generation, reloading shows the matrix immediately without any loading/skeleton state.",
+    "category": "Persisted Matrix Restore",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Type \"Nimbus CRM\" into the Product Name field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"A lightweight CRM for small sales teams.\" into the Product Description field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"Small business sales reps and sales managers\" into the Target Users field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"Leads, pipelines, email templates, reporting\" into the Core Features field"
+      },
+      {
+        "type": "action",
+        "description": "Click on the Generate Content Matrix button"
+      },
+      {
+        "type": "action",
+        "description": "Reload the page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Content Matrix\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC008",
+    "title": "Restored matrix displays all tier headings after reload",
+    "description": "Verifies that the restored matrix preserves and displays all tier headings after a page reload.",
+    "category": "Persisted Matrix Restore",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Type \"Pulse Scheduler\" into the Product Name field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"Appointment scheduling for clinics with automated reminders.\" into the Product Description field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"Clinic admins, doctors, and front-desk staff\" into the Target Users field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"Calendar sync, SMS reminders, intake forms, payments\" into the Core Features field"
+      },
+      {
+        "type": "action",
+        "description": "Click on the Generate Content Matrix button"
+      },
+      {
+        "type": "action",
+        "description": "Reload the page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Tier 1\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC009",
+    "title": "Restored matrix shows card content (not empty placeholders) after reload",
+    "description": "Verifies the restored matrix includes visible card text content rather than empty placeholders.",
+    "category": "Persisted Matrix Restore",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Type \"Forge DevTools\" into the Product Name field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"Developer tooling to speed up CI troubleshooting.\" into the Product Description field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"DevOps engineers and backend developers\" into the Target Users field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"Build logs, flaky test detection, failure grouping\" into the Core Features field"
+      },
+      {
+        "type": "action",
+        "description": "Click on the Generate Content Matrix button"
+      },
+      {
+        "type": "action",
+        "description": "Reload the page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Tier 1\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Forge DevTools\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC010",
+    "title": "Generating a second time overwrites persisted matrix and restores the latest on reload",
+    "description": "Verifies that the latest successful generation replaces the previously persisted matrix and is the one restored after reload.",
+    "category": "Persisted Matrix Restore",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Type \"Alpha Notes\" into the Product Name field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"A team note-taking app for project documentation.\" into the Product Description field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"Engineering teams and project managers\" into the Target Users field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"Markdown, search, templates, permissions\" into the Core Features field"
+      },
+      {
+        "type": "action",
+        "description": "Click on the Generate Content Matrix button"
+      },
+      {
+        "type": "action",
+        "description": "Type \"Beta Notes\" into the Product Name field"
+      },
+      {
+        "type": "action",
+        "description": "Click on the Generate Content Matrix button"
+      },
+      {
+        "type": "action",
+        "description": "Reload the page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Beta Notes\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC011",
+    "title": "No sample banner after reload when a persisted matrix exists",
+    "description": "Verifies that once a matrix has been generated and persisted, the sample banner does not appear on subsequent visits.",
+    "category": "Persisted Matrix Restore",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Type \"Cedar HR\" into the Product Name field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"HR onboarding workflows for distributed teams.\" into the Product Description field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"HR managers and team leads\" into the Target Users field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"Onboarding checklists, doc collection, task assignments\" into the Core Features field"
+      },
+      {
+        "type": "action",
+        "description": "Click on the Generate Content Matrix button"
+      },
+      {
+        "type": "action",
+        "description": "Reload the page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Sample\" is not visible"
+      }
+    ]
+  }
+]

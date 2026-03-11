@@ -1,0 +1,18 @@
+{
+  "status": "commited",
+  "type": "frontend",
+  "scope": "codebase",
+  "localEndpoint": "http://localhost:3000",
+  "executionArgs": {
+    "projectName": "reelmatrix",
+    "projectPath": "/Users/harryzhang/reelmatrix",
+    "testIds": [],
+    "additionalInstruction": "",
+    "serverMode": "development",
+    "envs": {
+      "API_KEY": "sk-user-OWOzLQKZvxja_wMQJ6ySEjDHOUmEEI-eCsoV057yYfZhAoe1LCsB1EyGkQiu-aV1jzUhjDpk73YdAzxAtr8EJIq_73iKCNd4E8Sa280gM5YOydDYRqwhfYPGBAKLi_W_aas"
+    }
+  },
+  "serverPort": 62027,
+  "proxy": "http://7eb8ea90-388a-42eb-8c82-5c48da06fb6a:HxSCxsv9aWUrOc0cwbGaqZ8Qy4pM1NZ7@tun.testsprite.com:8080"
+}
