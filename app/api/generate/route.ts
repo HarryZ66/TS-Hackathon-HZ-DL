@@ -22,7 +22,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Missing API key" }, { status: 500 });
   }
 
-  const { productName, description, targetUsers, coreFeatures } = await req.json();
+  const { productName, description, targetUsers, coreFeatures, pastContent } = await req.json();
 
   if (!productName || !description || !targetUsers || !coreFeatures) {
     return NextResponse.json({ error: "Missing fields" }, { status: 400 });
@@ -36,15 +36,22 @@ export async function POST(req: NextRequest) {
     messages: [
       {
         role: "user",
-        content: `You are ReelMatrix, an AI video content strategist for DevTool companies.
+        content: `You are ReelMatrix, an AI video content strategist for DevTool companies operating in the Vibe Coding era — where AI writes code faster than ever, but also breaks things faster than ever. DevTools need to position themselves as the "verification layer" or "quality gatekeeper" in the AI-native development workflow.
+
 Generate a 3-tier video content matrix for this product:
 
 Product: ${productName}
 Description: ${description}
 Target Users: ${targetUsers}
 Core Features: ${coreFeatures}
+${pastContent ? `Past Content / Hackathon Notes: ${pastContent}` : ""}
 
-Return ONLY a JSON object with this exact structure, no markdown:
+Each tier targets a specific audience:
+- Tier 1 (Narrative): For Founders & Tech Leaders — thought leadership, big picture storytelling
+- Tier 2 (Problem-Solution): For Tech Leads & Senior Devs — technical credibility, workflow proof
+- Tier 3 (Product Demo): For Individual Developers — hands-on magic moments, instant value
+
+Return ONLY a JSON object with this exact structmarkdown:
 {
   "tier1": [
     {"title":"...","description":"...","format":"...","channel":"...","angle":"...","tier_goal":"...","tier":1}
@@ -57,18 +64,16 @@ Return ONLY a JSON object with this exact structure, no markdown:
   ]
 }
 
-Generate 2 items per tier. Tier 1 = narrative/thought leadership, Tier 2 = problem-solution, Tier 3 = product demo.`,
+Generate 2 items per tier. Make content specific, opinionated, and ready to execute.`,
       },
     ],
   });
 
   try {
     const text = message.content[0].type === "text" ? message.content[0].text : "";
-const clean = text.replace(/```json|```/g, "").trim();
-const matrix = JSON.parse(clean) as ContentMatrix;
+    const matrix = JSON.parse(text) as ContentMatrix;
     return NextResponse.json(matrix);
-  } catch (e) {
-    console.error("API Error:", e);
+  } catch {
     return NextResponse.json({ error: "Parse error" }, { status: 500 });
   }
 }
