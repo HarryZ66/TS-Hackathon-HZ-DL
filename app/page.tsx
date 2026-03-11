@@ -27,7 +27,7 @@ const SAMPLE_MATRIX: ContentMatrix = {
 };
 
 export default function Home() {
-  const [form, setForm] = useState({ productName: "", description: "", targetUsers: "", coreFeatures: "" });
+  const [form, setForm] = useState<Record<string, string>>({ productName: "", description: "", targetUsers: "", coreFeatures: "" });
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
   const [matrix, setMatrix] = useState<ContentMatrix>(() => {
     if (typeof window === "undefined") return SAMPLE_MATRIX;

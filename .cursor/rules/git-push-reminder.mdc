@@ -1,0 +1,17 @@
+---
+description: After every code change, remind user to commit and push to GitHub
+alwaysApply: true
+---
+
+# Git Push Reminder
+
+After applying any code changes, always end your response with:
+
+```
+After applying all changes, run:
+git add .
+git commit -m "fix: describe what was changed"
+git push
+```
+
+Replace the commit message with a concise description of the actual change made.
