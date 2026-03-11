@@ -51,7 +51,7 @@ export default function Home() {
     // Fix 4: client-side validation before API call
     const { isValid, errors } = validateIntakeForm(form);
     if (!isValid) {
-      setFieldErrors(errors);
+      setFieldErrors(errors as unknown as FieldErrors);
       return;
     }
     setFieldErrors({});
