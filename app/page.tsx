@@ -77,7 +77,7 @@ export default function Home() {
       const data = await res.json();
       setMatrix(data);
       setActiveTier(1);
-      localStorage.setItem("reelmatrix_last", JSON.stringify(data));
+      if (typeof window !== "undefined") localStorage.setItem("reelmatrix_last", JSON.stringify(data));
     } catch {
       setError("Something went wrong. Please try again.");
     } finally {
