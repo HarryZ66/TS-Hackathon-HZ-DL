@@ -55,7 +55,7 @@ IMPORTANT: Return ONLY raw JSON, no markdown, no backticks, no explanation. Star
 
 {"tier1":[{"title":"...","description":"...","format":"...","channel":"...","angle":"...","tier_goal":"...","tier":1}],"tier2":[{"title":"...","description":"...","format":"...","channel":"...","angle":"...","tier_goal":"...","tier":2}],"tier3":[{"title":"...","description":"...","format":"...","channel":"...","angle":"...","tier_goal":"...","tier":3}]}
 
-Generate 2 items per tier.`,
+Generate exactly 2 items per tier. Do not add any extra fields outside of tier1, tier2, tier3.`,
       },
     ],
   });

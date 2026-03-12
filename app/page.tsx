@@ -74,7 +74,7 @@ export default function Home() {
         body: JSON.stringify(form),
       });
       if (!res.ok) throw new Error("Failed");
-      const data = await res.json();
+      const raw = await res.json(); const data = { tier1: raw.tier1, tier2: raw.tier2, tier3: raw.tier3 };
       setMatrix(data);
       setActiveTier(1);
       if (typeof window !== "undefined") localStorage.setItem("reelmatrix_last", JSON.stringify(data));
