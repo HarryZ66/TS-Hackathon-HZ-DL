@@ -4,7 +4,7 @@
 
 ---
 
-## What I Built
+## What We Built
 
 ReelMatrix is an AI agent that acts as a specialized short-video content strategist for developer-tool companies. It takes your product name, description, target users, and core features as input, and outputs a structured, narrative-driven, three-tier video content plan with shoot-ready scripts — calibrated specifically for developer audiences.
 
