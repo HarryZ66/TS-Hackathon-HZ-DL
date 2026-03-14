@@ -128,7 +128,7 @@ reelmatrix/
 
 ## Team
 
-Built by **Pengcheng (Harry) Z** — University of Washington MSIM
+Built by **Pengcheng LU, Harry Zhang ** — University of Washington MSIM
 
 ---
 
