@@ -69,7 +69,7 @@ IMPORTANT: Return ONLY raw JSON, no markdown, no backticks. Start with { and end
 
 {"core_narrative":"one sentence positioning statement","tier1":[{"title":"...","description":"...","format":"...","channel":"...","angle":"...","tier_goal":"...","tier":1,"hook_version":"30-60 sec version concept","full_version version concept","production_cost":"Low","publish_week":3,"priority":false}],"tier2":[{"title":"...","description":"...","format":"...","channel":"...","angle":"...","tier_goal":"...","tier":2,"hook_version":"...","full_version":"...","production_cost":"Low","publish_week":2,"priority":false}],"tier3":[{"title":"...","description":"...","format":"...","channel":"...","angle":"...","tier_goal":"...","tier":3,"hook_version":"...","full_version":"...","production_cost":"Low","publish_week":1,"priority":true}]}
 
-Generate exactly 2 items per tier. Do not add any extra fields outside of tier1, tier2, tier3, core_narrative.`,
+Generate exactly 2 items per tier. Do not add any extra fields outside of tier1, tier2, tier3, core_narrative. For hook_version always specify "Twitter/X: 60-sec clip —" at the start. For full_version always specify "YouTube: 2-3 min —" at the start.`,
       },
     ],
   });

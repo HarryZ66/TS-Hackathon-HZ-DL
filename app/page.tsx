@@ -302,6 +302,12 @@ export default function Home() {
                   </div>
                 )}
 
+                {/* Publish rhythm notice */}
+                <div className="px-5 pt-4">
+                  <div className="bg-blue-500/10 border border-blue-500/20 rounded-xl p-3 text-xs text-blue-300">
+                    💡 <span className="font-semibold">Publishing Strategy:</span> Start with Week 1 Product Demo content — lowest production cost, highest virality. Build audience first, then introduce narrative content in Week 2-3.
+                  </div>
+                </div>
                 {/* Tabs */}
                 <div className="flex border-b border-slate-700/50">
                   {([1, 2, 3] as const).map((tier) => {
