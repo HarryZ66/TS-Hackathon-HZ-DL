@@ -2,8 +2,6 @@
 
 > Built for the TestSprite Hackathon 2026
 
-![ReelMatrix UI](public/screenshot-1.jpg)
-
 **Live Demo:** https://ts-hackathon-hz-dl-m8ic.vercel.app
 
 ---
@@ -25,13 +23,6 @@ ReelMatrix enforces a proven content architecture:
 | Tier 3 | Demo | 40% | Tactical product demonstrations framed within the larger narrative |
 
 Most DevTool accounts only produce Tier 3 content. This is why they feel flat and fail to build followings.
-
-## Screenshots
-
-| Empty State | Generated Matrix |
-|-------------|-----------------|
-| ![Empty](public/screenshot-0.jpg) | ![Narrative Tab](public/screenshot-1.jpg) |
-| ![Problem-Solution Tab](public/screenshot-2.jpg) | ![Product Demo Tab](public/screenshot-3.jpg) |
 
 ---
 
